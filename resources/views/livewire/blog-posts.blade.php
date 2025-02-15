@@ -1,5 +1,12 @@
 <div class="max-w-4xl mx-auto mt-10">
-    <h1 class="text-2xl font-bold mb-4">Publicaciones del Blog</h1>
+    <div class="flex justify-between items-center mb-4">
+        <h1 class="text-2xl font-bold">Publicaciones del Blog</h1>
+
+        <!-- Botón para ir a la vista de inicio de sesión en una nueva pestaña -->
+        <a href="{{ route('login') }}" target="_blank" class="border border-black text-black py-2 px-4 rounded transition duration-300 hover:bg-black hover:text-white">
+            Iniciar Sesión
+        </a>
+    </div>
 
     <!-- Campo de búsqueda por fecha -->
     <div class="mb-4">
@@ -7,7 +14,6 @@
         <input type="date" wire:model="searchDate" class="border rounded p-2 w-full">
     </div>
 
-    <!-- Lista de publicaciones -->
     @foreach($posts as $post)
         <div class="bg-white shadow-md rounded-lg p-4 mb-4">
             <h2 class="text-xl font-semibold">{{ $post->title }}</h2>
