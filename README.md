@@ -25,7 +25,7 @@ Este es un proyecto desarrollado con Laravel y Livewire que permite la creación
 
 ### 1️⃣ Clonar el repositorio
 ```sh
-    git clone https://github.com/tu-usuario/tu-repositorio.git
+    git clone https://github.com/HakaiNoKami97/blog-prueba
     cd blog-prueba
 ```
 
