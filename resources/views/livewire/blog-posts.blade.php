@@ -8,6 +8,15 @@
         </a>
     </div>
 
+    <!-- Mostrar botón de crear publicación si el usuario está autenticado y activo -->
+    @if(auth()->check() && auth()->user()->is_active)
+        <div class="mb-4">
+            <a href="{{ route('posts.create') }}" class="bg-green-500 text-white py-2 px-4 rounded">
+                Crear Publicación
+            </a>
+        </div>
+    @endif
+
     <!-- Campo de búsqueda por fecha -->
     <div class="mb-4">
         <label class="block text-sm font-medium text-gray-700">Buscar por fecha:</label>
