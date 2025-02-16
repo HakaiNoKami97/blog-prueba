@@ -6,6 +6,8 @@ use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Register;
 use App\Livewire\Admin\Users;
 use App\Livewire\CreatePost;
+use App\Livewire\ApiPosts;
+use App\Services\JsonPlaceholderService;
 
 Route::get('/', BlogPosts::class);
 Route::get('/login', Login::class)->name('login');
@@ -20,3 +22,11 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/posts/create', CreatePost::class)->name('posts.create');
 });
+
+// Ruta para consumir la API externa
+Route::get('/api/posts', function (JsonPlaceholderService $service) {
+    return response()->json($service->getPosts());
+});
+
+// Ruta para mostrar el componente Livewire que usa la API
+Route::get('/api-posts', ApiPosts::class)->name('api.posts');
